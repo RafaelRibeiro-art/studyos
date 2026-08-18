@@ -1,0 +1,15 @@
+{
+  "name": "StudyOS — Rafael Ribeiro",
+  "short_name": "StudyOS",
+  "description": "Cronograma de estudos, AOLs, avaliações, disciplinas e checklist de Rafael Ribeiro.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#081426",
+  "theme_color": "#0B1B33",
+  "orientation": "portrait",
+  "icons": [
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

@@ -1,0 +1,480 @@
+
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rafael Ribeiro • StudyOS</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAND0lEQVR4nO2de1AV1x3Hz8LlKk/xCRriCzQ+YkbN1PAMXMB0NDWRpnXamPiKmbapTROfIIqSIOArmommk7FtYmyMo6kmbdROCgKVh60dx7Qak2h81sbWF8hDBIH+cTtX3N2zu3f3vHbv7zPnD2bZ+zvf8zvfPefscjkrhT/wKAIANYJ4CwDEBcwBYAFzAFhcCEm8NQCC4gJvADhgWgGwwLQCYIGRA8AC5gCwuJAE0wqgDowcABYXjBsADhg5ACxwKwtggSekABaYVgAsMK0AWFy8BfDhyJtd/n4k8ZcBdxVJEYMTeWugjgkrGMHxdpEihiTx1kCFI5s7WVaX+IoDV2+OMgdjQ+BwjFGcYA5BPKHE7i6RIoYk89ZgniObO3hL0CfxlWDeEkwiRdrTHHXWbJHkf4exr5E7UuRQm5mjbpPfnZT0KpWOEUcJJexkDr86g3E3iKzNNFLk0BTeGvSp23TX4JlJr3J+rGcjqbqIbg6DuRYw0fZV7kNcczggucjmrZAih6Xy1qBC3RvtuuckLQxhoIQINm2OiObQTaWAeTSC7dolljlslz4T2KiNUuSwNN4a/k/dG20av01a6GamhAG2aKwo5tBIliCZooHgrZYih3M2R91GzWtoEf8cUUXk5ktRwx/nWH3txjsav01e1IOZEo4ImwSe5tBISoDYojsCZoPbFw4EzAVfNFqtPbTQg485wBmqiOYPKSo+nXGVtRtaVY8nL+7JWImwCJIi1iOHIM0WHFw2cNmjBFNzgDOMI4I/pKj4DDY11W64rXo8eXEoGwF2hG/SOH89GpyhDd/8SFEJGQyqqV2vcgUkLwFnGIJX9qSoBA/tOmrXtygPJi8Jo12vk+CSQ+rTimqrACLQzm2QhBDVokrKkjDa9TqspGAGCaqV0h05atSsjWsnoI1q3lQzTAqp14hMSqFr1jUrD6YsDadUXYDAMqu0Rg7VNgCUoJRtps85YNiwDsscSr1GZBEPWrOuSXkwZWkE8YoCFjYZZjRygDPIwiafQcRvgFRNzf9e0HlFQc26JrJVBDFQnbIsknciHVhSlkWqXe0kqyA8rdSsbSQbEPALsvmnvubAGBwgAO3ckpxWMLblPwI7usipWdtIKriL6ouaUnOj4EVQVEnNjaouvSU7SCrnxKYVpUSAF6T6guKaIzU3il5wwAe9PJNZc2Csyn0+Dpwip7r0lvWwtEaO1NxelCIDSihlm8AT0urSBpXA3K+lQCsKqksbLMak8jKe1LxoE596cFDMkf2/MfHBrq6u9va7d9raGhqb6xsaL1+5euHSlS9Onzt+4uvT5y6ZCCiyJBypedHVJfWKw5Y6V8RN7PxFkiS3O8TtDomMCI8bOODhUfG+X1357/X95TUf7vvs1OnzAS7JBFbXHGpuFYjYAX1f+PFTZbu3vLe5YEhcLG85CLGVZLF3rN+tyEnN601s2iTH5PRJ5Xu2Tnsizf6SsCU1r7daPeYDUnh1qOmAdPsChfbs8avSpS5X8L6DVUY/I6Akf7HQBHu/LcZfJEnauOrlkcMf5C3kHgJK8hEkIcl0qS6+KQuXtryPlYAMGtzD7V696EVbS9Ioacv7yIJXF980HS2wRg4v6UkTHkoYwlvFfQgoCQXatOJj2mSB9m32IqAk0gtSK9EMfPbqjfoJk2d1P+J2h4SH9hwcFzt+zIjvT8149JFRRqpKnDjWkFQBJZnAbFjzt7KH19yQxUrL70v8xhjT1nulre3uzYamz0+e2b7n4NNzl+WXvtPVpf+K4fhhcXaWpFXS8vvKIh9ec8NcKKdNK9v3HNjz6SHd0/r3iQ4KYrHYREJKMojTzIEQ2vVxmZHTQnuy29NSQElGIPuHN4uhjI/hWpz46pyRKK2t7QZqFFCSOcyEJbogFcIbqKW1taOzMzhIa1BsbG7p6Opk5Q2iksxhKqwDp5WIsFDtbkAInb1wmY0YLwJKMoLJu5XDRddkgdJW9Cex2DaCTpDufx/HcezEaTtL0ilpK/rLgh8uumYijgNHjpk5T+ies7+sloESHwJKMoKL1BxHaa5U1qJd0bwfPZkzReclIafPXvrrsZMEGy6aJFVMBCe3IGXjDkVFLldwRFjo4Adix48d8czUjInjRuoGWLlhG2G1AkpS4n98grey1uPoR+jXJ/rS0X1W6nh7+76aoyf8WUyIJsk0fsd34JpDg/d2HyjZsoO3ivsQUJIPJ3zB2AiNTS0r12/7/YEq3kLuIaAkGTabVkzQ2NSy8+M/b3l3b/2tJv+rEFCSafyuSKQFKYUsVdQeW/ja1ms36k3GF1CSafyvy+FrDk/yxL989NZLs3J0H1AyQ0BJOEx/n0MJkad75ImMCMtb8Nzv3ioIDwt1iiRGHSS6eUmR+p1x72/ODwkRaAEuoCQZgWIOhNCk8aMLF87lreI+BJTUHRexPYKsxzEQ4NqNhglT5nt/Dg4KiooMHzEsLitl4rPTs6Oj9Pdtff6Z7352+O+VdcdtLMk0/neQyfetqFTNasXhO7mzs7O+ofHo8VOlWz9I/8HLh//2DyMfL1o83x3isrUkZh3kkGnlZkPjnIUlRz//UvfMIXEx82ZMDUxJ/uIQcyCE2tvv/jRv461G/ZdL/GzW9PBQFm+yFVCSX5i8lU1fNUgWqKrwW+YTi7xcvd5QsnWn7uf7REfOnjHFzpJ0SlXht7L46asGmYhjYdsnP1LEpiMQktCuP5SfvShPjZIXn/1eaGgPu0pi1TXOmVa8dHR2bvr1bt3T+kZHzczJZqAHCSnJIFY2b1EiwNCBpE/Ljpz/1xXdKD+Z+ZQ7xG1PSYy6xmkjB0Koo7Pz7fc/0T0tpl/vGdMy6MtBSEhJRnCgORBCHx2o+vd/ruue9tLzT7uCgxnoQUJK0iXI9E4h6YVxslhVqy9b3X3ECAbi3O3ofOeDP+pGihvYP2dKmv0kaZaq1fL/f0kvjDMXypkjB0Jo5yfl12406J7281nTmf37soCStHGsOe60tW/7cL/uacMHD3wyM5GBHiSkJG0s7QmmDGdtUjF0uRiPtmNvWYOBp5MLZucESdg8CCiJWadYGjkyCuV74FWuorJ3szmaW26/u/tPuqeNThicnTqRgR5EX5Iy/8o+Mo7ljfGVcH7McV/57e6DzS23dUMumJNjJ0msusOxaw4vDY3NO/bqb5wyfkz845MeYaAHCSkJB/ntrSsLLgk0dCBp264DrXfadIP+Ym6OfSSpl8oC1TndfOdK/Sb80Fj7sVQWXJQdyXhtsMWYgAmId4TDpxXACuS+Q9qNyoKLGa8Ltx+vs6lceUHlqLXOJTBygA/ExHq/0JpW1I0M0IFStsm8OjTj9aFqwQlEhmKsyMl4faj1sBQXpJUrz9MLDvigl2di77L3FA2tWHFedpDCYhfQx1M0lEjm6d7KKu0CkIVqhsmsObzFUzRMrQru87GzixxP0TBSwak/BKtYYWjbb8AEtHNL2ByYwQNgBNn8U3lCKqNixTnPmuG0awk0KvLPqhwl2pvkpxXwAS+IZ57RH97UbQ6YhU0+Sd6t+IpnjcpLAiryz/Je2DukqDrDsyaeeEVM/2Rfkf8Ny+ocCcscWv4OKaZ4ijFvGOF/4dm8qOEpjqdRF5VpxVs8xQnKZlQs/4Z3dm1cKparDBue4gRK1ZncE8xgyVT3xxn+abZhqVh+RpnMzOIEejXy+ZrgIbV2AhpwyRh1c6gOHgARaOdWGjDpOaoVeDmUd1p5MLNkBIOqHQCv7DGaVlRbotpmQAbH64rzvyaAP7Thmx+Kt7Kyklmi/h68Q3nE3qfqsIJzRmbJSDYCmI4ceH98zVKGLcDlBJdDGtB6QoormaV4f/C/VkUpWGeUjmQpQxrw2Cya5lPnUO5XuF9llj7EUoloCJUZPgtSjXZqZMfxCOUMxPFuBfwhQzRnIISkmMdmc6nYS3mu1hsnskpHMVPCEWGTwHpBKitZa7VaXp77Jfe1Ie2i44y1ozhqk2ISeY4cPsqXYXOkbSBbI3irRTEH0swUEiNZBLFFY6WYxDm8NdyjfNkp7ROy1o5mo4QeNmqjWObwYqP0+YXt2iXFJM3hrUGF8qU6eUQIZa0TK5Ua2LQ5UkzSXN4a1Clf+oWR07LWjaGtxAq2boW45vBi3+TaV7kP0c3hxWCikQC5tpFUXaSYpHm8NRilfOlJ4ydnrRtLT4kSkbWZRopJto05vJQv8aMbvGStp9IZ4iihhBRrN3N4KfO/Y7qT7X8nsa+RO3Y1hxeLHcYGO9rCixSb/AJvDVYpW3KCtwR1stc/zFuCJZxgDh+CuMTunvAhxaY4xxzdKVvM1CjZGxxiiO5IsSnzeWugTtnif9IIm71hHI2w4hAQ5lBiwi6Ot4KSADUHYAQXQhJvDYCguMAbAA54xxuABaYVAIsLrAHggGkFwAILUgALrDkALDCtAFjAHAAWmFYALLAgBbDAtAJggWkFwAIjB4AFzAFg+R8rGm8SN9TrEAAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rafael Ribeiro">
+<meta name="theme-color" content="#0B1B33">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#081426;--bg2:#0c1e38;--card:#122a48;--card2:#16335a;--line:#24466e;--gold:#D4AF37;--text:#F5F7FB;--muted:#8FA6C7;--danger:#E4685E;--ok:#4FBE85}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial;background:radial-gradient(circle at 20% 0%,#0e2340,var(--bg) 60%);color:var(--text);padding-bottom:calc(86px + env(safe-area-inset-bottom));}
+.wrap{max-width:900px;margin:auto;padding:0 16px}
+
+/* ---- Top app bar ---- */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,20,38,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#a8791f);display:flex;align-items:center;justify-content:center;font-size:16px}
+.brand b{font-size:15px}
+.brand .sub{font-size:10.5px;color:var(--muted)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.bell{position:relative;width:36px;height:36px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.bell .dot{position:absolute;top:6px;right:7px;width:8px;height:8px;background:var(--danger);border-radius:50%;border:2px solid var(--bg)}
+.avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3a628f,#1b3a5e);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;border:1px solid var(--line)}
+
+/* ---- Views / transitions ---- */
+.view{display:none;padding:18px 0 10px}
+.view.active{display:block;animation:fadeSlide .28s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---- Cards ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 8px 24px -12px rgba(0,0,0,.55)}
+.hero{background:linear-gradient(135deg,#0b1b33,#1a3f6a);border:1px solid #355a86;border-radius:24px;padding:22px;box-shadow:0 12px 30px -14px rgba(0,0,0,.6)}
+.lesson{background:rgba(255,255,255,.05);border:1px solid #3a628f;border-radius:16px;padding:14px;margin:12px 0}
+.timeline{border-left:3px solid #3a628f;padding-left:18px}
+.t{position:relative;margin:16px 0}.t:before{content:"";position:absolute;left:-25px;top:5px;width:12px;height:12px;background:#5BA2FF;border-radius:50%;box-shadow:0 0 0 4px rgba(91,162,255,.15)}
+.progress{height:8px;background:#0f2743;border-radius:999px;overflow:hidden;margin:10px 0}
+.bar{height:100%;background:linear-gradient(90deg,#5BA2FF,var(--gold));transition:width .4s ease}
+.tile{cursor:pointer;transition:transform .18s ease,border-color .18s ease}
+.tile:active{transform:scale(.97)}
+.tile:hover{border-color:var(--gold)}
+.hidden{display:none}
+.back{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px 16px;margin-bottom:14px;color:var(--text)}
+.small{color:var(--muted);font-size:12.5px}
+table{width:100%;border-collapse:collapse}th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{background:#0f2540;color:var(--muted);font-weight:600}
+button{font-family:inherit}
+button.btn{background:linear-gradient(135deg,var(--gold),#a8791f);color:#081426;border:none;padding:11px 18px;border-radius:14px;cursor:pointer;font-weight:700;font-size:13px;box-shadow:0 6px 16px -6px rgba(212,175,55,.5)}
+button.btn:active{transform:scale(.97)}
+
+.audit{background:rgba(212,175,55,.08);border:1px solid var(--gold);border-radius:16px;padding:14px;margin-bottom:16px;font-size:13px}
+.audit b{color:var(--gold)}
+
+/* ---- AOL tracker ---- */
+.aol-window{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.aol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:8px}
+.aol-item{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.aol-item.checked{border-color:var(--ok);background:rgba(79,190,133,.12)}
+.aol-item input{width:16px;height:16px;accent-color:var(--ok)}
+.aol-item span{font-size:13px}
+.aol-summary{font-size:12px;color:var(--muted);margin-top:6px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:10.5px;font-weight:700;margin-left:6px}
+.badge-warn{background:rgba(228,104,94,.18);color:var(--danger)}
+.badge-ok{background:rgba(79,190,133,.18);color:var(--ok)}
+
+/* ---- Bottom nav (app style) ---- */
+.bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(10,24,44,.92);backdrop-filter:blur(16px);border-top:1px solid var(--line);
+  display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));}
+.navbtn{background:none;border:none;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 7px;border-radius:14px;cursor:pointer;transition:.18s ease;font-size:9px;flex:1}
+.navbtn .ic{font-size:18px;line-height:1}
+.navbtn.active{color:var(--gold);background:rgba(212,175,55,.1);transform:translateY(-3px)}
+.navbtn:active{transform:scale(.92)}
+</style></head><body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand"><div class="logo">🎓</div><div><b>Rafael Ribeiro</b><div class="sub" id="today"></div></div></div>
+  <div class="topbar-right">
+    <div class="bell" title="Próxima web aula: 18/08 16h"><span>🔔</span><span class="dot"></span></div>
+    <div class="avatar" id="avatarBtn" onclick="document.getElementById('avatarInput').click()" title="Alterar foto de perfil">RR</div>
+    <input type="file" id="avatarInput" accept="image/*" style="display:none">
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<div class="card" style="margin-bottom:16px">
+  <h3 style="margin-top:0">🎯 Foco do dia</h3>
+  <div id="nextDeadline"></div>
+  <div class="lesson" id="studyTip" style="margin-top:12px"></div>
+</div>
+
+<section id="home" class="view active">
+  <div class="hero"><h2 style="margin-top:0">Bom dia, Rafael 👋</h2><p class="small">Missão inteligente do dia (baseada no calendário auditado).</p>
+  <div class="lesson"><h3 style="margin-top:0">⭐ Próxima Web Aula</h3><p id="nextWebAulaText"><b>Carregando…</b></p><p class="small" id="nextWebAulaProf"></p><button class="btn" id="nextWebAulaBtn">▶ Continuar estudando</button></div></div>
+
+  <div class="card" style="margin-top:16px"><h3 style="margin-top:0">🟡 Resumo de AOLs pendentes</h3><div id="aolHomeSummary"></div></div>
+</section>
+
+<section id="sem" class="view"><div class="card"><h2 style="margin-top:0">📅 Linha do Tempo (auditada)</h2><table><tr><th>Data</th><th>Disciplina</th><th>Evento</th></tr>
+<tr><td>18/08</td><td>Geometria</td><td>Web aula AO VIVO</td></tr>
+<tr><td>19/08</td><td>Ensino Digital</td><td>Web aula AO VIVO (17h45)</td></tr>
+<tr><td>24/08–27/09</td><td>Extensão</td><td>AV1 (janela de envio)</td></tr>
+<tr><td>25/08</td><td>Geometria</td><td>Web aula AO VIVO</td></tr>
+<tr><td>28/08–31/08</td><td>Geometria</td><td>Agendamento AV2</td></tr>
+<tr><td>29/08</td><td>Química</td><td>Web aula AO VIVO (9h)</td></tr>
+<tr><td>29/08</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>02/09–04/09</td><td>Ensino Digital</td><td>Agendamento AV2</td></tr>
+<tr><td>05/09</td><td>Química</td><td>Web aula AO VIVO (9h)</td></tr>
+<tr><td>05/09</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>08/09</td><td>Geometria</td><td>Web aula AO VIVO</td></tr>
+<tr><td>11/09–30/09</td><td>Geometria</td><td>Realização AV2</td></tr>
+<tr><td>21/09</td><td>Ens.Digital / Geometria / Química</td><td>Prazo final AV1 (AOLs 01–04)</td></tr>
+<tr><td>21/09–30/09</td><td>Ensino Digital</td><td>Realização AV2 presencial</td></tr>
+<tr><td>21/09–30/09</td><td>Ensino Digital</td><td>Solicitação 2ª chamada</td></tr>
+<tr><td>21/09–02/10</td><td>Química</td><td>Realização AV2 (relatório online)</td></tr>
+<tr><td>23/09</td><td>Geometria</td><td>Gabarito AV1</td></tr>
+<tr><td>25/09–28/09</td><td>Geometria</td><td>Solicitação 2ª chamada</td></tr>
+<tr><td>27/09</td><td>Extensão</td><td>Fim da janela de envio AV1</td></tr>
+<tr><td>01/10</td><td>IA</td><td>Web aula AO VIVO (8h30)</td></tr>
+<tr><td>01/10–07/12</td><td>IA</td><td>Janela de envio AV1 (AOLs 01–04)</td></tr>
+<tr><td>05/10–06/10</td><td>Ensino Digital</td><td>Realização 2ª chamada</td></tr>
+<tr><td>06/10–10/10</td><td>Geometria</td><td>Realização 2ª chamada</td></tr>
+<tr><td>15/10</td><td>Geometria</td><td>Gabarito AV2</td></tr>
+<tr><td>16/10</td><td>Ensino Digital</td><td>Notas de AV2/2ª chamada saem</td></tr>
+<tr><td>16/10–18/10</td><td>Geometria / Química</td><td>Agendamento AF</td></tr>
+<tr><td>17/10</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>19/10–22/11</td><td>Extensão</td><td>AV2 (janela de envio)</td></tr>
+<tr><td>21/10–23/10</td><td>Ensino Digital</td><td>Avaliação Final (AF)</td></tr>
+<tr><td>23/10–27/10</td><td>IA</td><td>Agendamento AV2</td></tr>
+<tr><td>27/10–31/10</td><td>Geometria / Química</td><td>Avaliação Final (AF)</td></tr>
+<tr><td>28/10</td><td>IA</td><td>Web aula AO VIVO (17h)</td></tr>
+<tr><td>31/10</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>04/11</td><td>Geometria / Química</td><td>Gabarito AF</td></tr>
+<tr><td>09/11–02/12</td><td>IA</td><td>Realização AV2</td></tr>
+<tr><td>14/11</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>21/11</td><td>IA</td><td>Web aula AO VIVO (14h30)</td></tr>
+<tr><td>22/11</td><td>Extensão</td><td>Fim da janela de envio AV2</td></tr>
+<tr><td>27/11–30/11</td><td>IA</td><td>Solicitação 2ª chamada</td></tr>
+<tr><td>07/12</td><td>IA</td><td>Prazo final AV1 (AOLs 01–04)</td></tr>
+<tr><td>09/12</td><td>IA</td><td>Gabarito AV1</td></tr>
+<tr><td>09/12–14/12</td><td>IA</td><td>Realização 2ª chamada</td></tr>
+<tr><td>17/12</td><td>IA</td><td>Gabarito AV2</td></tr>
+<tr><td>12/01/2027</td><td>IA</td><td>Gabarito AF</td></tr>
+</table></div></section>
+
+<section id="disc" class="view"><div id="grid" class="grid"></div><div id="detail" class="hidden"></div></section>
+
+<section id="aols" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🟡 AOLs — visão geral</h2><p class="small" style="margin:0">Acompanhe aqui, disciplina por disciplina, quais das 4 AOLs de cada AV1 você já enviou. Marcar aqui atualiza também dentro da disciplina (é o mesmo dado salvo).</p></div><div id="aolsListContainer"></div></section>
+
+<section id="avaliacoes" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🎓 AV1 / AV2 / AF — visão geral</h2><p class="small" style="margin:0">Todas as avaliações de todas as disciplinas, em ordem de proximidade — o que está mais perto de vencer aparece primeiro.</p></div><div id="avalList"></div></section>
+
+<section id="check" class="view"><div class="card"><h2 style="margin-top:0">Checklist</h2><label class="aol-item" style="display:flex"><input type="checkbox" data-id="1"><span>Web Aulas em dia</span></label><br><label class="aol-item" style="display:flex;margin-top:8px"><input type="checkbox" data-id="2"><span>AVA atualizado</span></label><br><label class="aol-item" style="display:flex;margin-top:8px"><input type="checkbox" data-id="3"><span>Revisão concluída</span></label></div></section>
+
+</div>
+
+<nav class="bottomnav">
+  <button class="navbtn active" data-view="home"><span class="ic">🏠</span>Hoje</button>
+  <button class="navbtn" data-view="sem"><span class="ic">📅</span>Semestre</button>
+  <button class="navbtn" data-view="disc"><span class="ic">📚</span>Disciplinas</button>
+  <button class="navbtn" data-view="aols"><span class="ic">🟡</span>AOLs</button>
+  <button class="navbtn" data-view="avaliacoes"><span class="ic">🎓</span>Avaliações</button>
+  <button class="navbtn" data-view="check"><span class="ic">✅</span>Checklist</button>
+</nav>
+
+<script>
+today.textContent=new Date().toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long"});
+
+function goto(view){
+  document.querySelectorAll(".navbtn").forEach(x=>x.classList.remove("active"));
+  document.querySelector(`.navbtn[data-view='${view}']`).classList.add("active");
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.getElementById(view).classList.add("active");
+}
+document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>goto(b.dataset.view));
+
+const D=[
+{n:"📐 Geometria Analítica",p:"20%",prof:"THIAGO HENRIQUE MARQUES DE ALBUQUERQUE",aolWindow:"20/07–21/09",
+ web:[["18/08/2026","16:00"],["25/08/2026","16:00"],["08/09/2026","16:00"]],
+ av:[["Gabarito AV1","23/09"],["Agendamento AV2","28/08–31/08"],["AV2 (realização)","11/09–30/09"],["Solicitação 2ª chamada","25/09–28/09"],["2ª chamada (realização)","06/10–10/10"],["Gabarito AV2","15/10"],["Agendamento AF","16/10–18/10"],["AF (realização)","27/10–31/10"],["Gabarito AF","04/11"]],
+ mat:["Unidade 1: Vetores ✅","Unidade 2: Estudo da Reta e Introdução ao Estudo do Plano","Unidade 3: Interseções e Distâncias entre Pontos, Retas e Planos","Unidade 4: Estudo das Cônicas","E-book"]},
+{n:"🤖 IA Aplicada",p:"100%",prof:"RICARDO MACEDO BAUDEL",aolWindow:"01/10–07/12",
+ web:[["29/08/2026","14:30"],["05/09/2026","14:30"],["01/10/2026","08:30"],["17/10/2026","14:30"],["28/10/2026","17:00"],["31/10/2026","14:30"],["14/11/2026","14:30"],["21/11/2026","14:30"]],
+ av:[["Gabarito AV1","09/12"],["Agendamento AV2","23/10–27/10"],["AV2 (realização)","09/11–02/12"],["Solicitação 2ª chamada","27/11–30/11"],["2ª chamada (realização)","09/12–14/12"],["Gabarito AV2","17/12"],["Gabarito AF","12/01/2027"]],
+ mat:["Unidade 1: Conceitos de Inteligência Artificial ✅","Unidade 2: Conceitos de Aprendizado de Máquina ✅","Unidade 3: Ética, Viés e Privacidade no Uso da IA ✅","Unidade 4 ✅","E-books (Unidades 1–3) ✅"]},
+{n:"⚗️ Química Aplicada",p:"100%",prof:"DANILO EMIDIO DE SOUZA",aolWindow:"20/07–21/09",
+ web:[["29/08/2026","09:00"],["05/09/2026","09:00"]],
+ av:[["AV2 (relatório/atividade online)","21/09–02/10"],["Agendamento AF","16/10–18/10"],["AF (realização)","27/10–31/10"],["Gabarito AF","04/11"]],
+ mat:["Unidade 1: Estrutura Eletrônica ✅","Unidade 2: Reações Químicas em Soluções Aquosas ✅","Unidade 3: Cálculos em Química e Cálculos Estequiométricos ✅","Unidade 4: Conceitos de Química Orgânica ✅","E-book ✅"]},
+{n:"💻 Ensino Digital",p:"100%",prof:"ERIKA ALVES DE LIRA",aolWindow:"20/07–21/09",
+ web:[["19/08/2026","17:45"]],
+ av:[["Agendamento AV2","02/09–04/09"],["AV2 presencial (realização)","21/09–30/09"],["Solicitação 2ª chamada","21/09–30/09"],["2ª chamada (realização)","05/10–06/10"],["Notas AV2/2ª chamada saem","16/10"],["AF (realização)","21/10–23/10"]],
+ mat:["Unidades 1–4 ✅","E-book ✅","Conexão EAD / Nivelamentos (Português, Matemática, Biologia, Física, Informática) ✅","Trabalhabilidade e Peixe 30 ✅","Jornada de Integração Acadêmica ✅"]},
+{n:"🌱 Projeto de Extensão",p:"50%",prof:"Coordenação",aolWindow:null,
+ web:[["29/07/2026 (gravação)","18:00"],["06/08/2026 (gravação)","17:30"]],
+ av:[["AV1 – Projeto de Extensão (janela)","24/08–27/09"],["AV2 – Relatório de Intervenção (janela)","19/10–22/11"]],
+ mat:["Módulo: O que é Extensão Universitária ✅","Módulo: Como Realizar Extensão Universitária ✅","Módulo: Campanhas de Conscientização ✅","Módulo: Direitos Humanos ✅","E-book ✅","Modelos: Projeto, Carta de Apresentação, Relatório, Documento para Fotos, Ata, Declaração ✅"]}
+];
+
+function aolKey(i,n){ return `aol_${i}_${n}`; }
+function aolDoneCount(i){
+  let c=0;
+  for(let n=1;n<=4;n++){ if(localStorage.getItem(aolKey(i,n))=='1') c++; }
+  return c;
+}
+function renderAolBlock(i, context){
+  const d=D[i];
+  if(!d.aolWindow){
+    return `<div class="lesson"><p class="small">Esta disciplina não tem AOLs separadas — as entregas são integradas ao Projeto de Extensão (AV1/AV2).</p></div>`;
+  }
+  let items="";
+  for(let n=1;n<=4;n++){
+    const key=aolKey(i,n);
+    const checked=localStorage.getItem(key)=='1';
+    const domId=`${context}_aol_${i}_${n}`;
+    items+=`<label class="aol-item ${checked?'checked':''}" id="${domId}_label"><input type="checkbox" ${checked?'checked':''} onchange="toggleAol(${i},${n})"><span>AOL ${n}</span></label>`;
+  }
+  return `<div class="aol-window">Janela de envio (AV1): <b>${d.aolWindow}</b></div><div class="aol-grid">${items}</div><div class="aol-summary" id="${context}_aolSummary_${i}"></div>`;
+}
+function toggleAol(i,n){
+  const key=aolKey(i,n);
+  const cur=localStorage.getItem(key)=='1';
+  localStorage.setItem(key, cur? '0':'1');
+  refreshAolUI();
+}
+function updateAolSummary(i, context){
+  const el=document.getElementById(`${context}_aolSummary_${i}`);
+  if(!el) return;
+  const done=aolDoneCount(i);
+  el.innerHTML = done<4
+    ? `${done}/4 confirmadas <span class="badge badge-warn">Faltam ${4-done}</span>`
+    : `4/4 confirmadas <span class="badge badge-ok">Completo</span>`;
+}
+function refreshAolUI(){
+  renderAolHomeSummary();
+  if(document.getElementById('aolsListContainer')) renderAolsView();
+  if(window.__lastShow && window.__lastShow.t==='aol'){ show('aol', window.__lastShow.i); }
+}
+function renderAolHomeSummary(){
+  const el=document.getElementById('aolHomeSummary');
+  let html='';
+  D.forEach((d,i)=>{
+    if(!d.aolWindow) return;
+    const done=aolDoneCount(i);
+    html+=`<div class="lesson tile" style="margin:8px 0;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="openDisc(${i},'aol')">
+      <span>${d.n}</span>
+      ${done<4 ? `<span class="badge badge-warn">${done}/4 — faltam ${4-done}</span>` : `<span class="badge badge-ok">4/4 ✓</span>`}
+    </div>`;
+  });
+  el.innerHTML = html || '<p class="small">Nenhuma disciplina com AOLs cadastradas.</p>';
+}
+renderAolHomeSummary();
+
+/* ---- Datas: helpers para AOLs e Avaliações consolidadas ---- */
+function parseDMY(str){
+  const parts = str.trim().split('/').map(Number);
+  if(parts.length===3) return new Date(parts[2], parts[1]-1, parts[0]);
+  return new Date(2026, parts[1]-1, parts[0]);
+}
+function parseSingleOrRangeEnd(str){
+  const seg = str.split('–').map(s=>s.trim());
+  return parseDMY(seg[seg.length-1]);
+}
+
+function renderAolsView(){
+  const el=document.getElementById('aolsListContainer');
+  if(!el) return;
+  const now=new Date(); now.setHours(0,0,0,0);
+  let html='';
+  D.forEach((d,i)=>{
+    if(!d.aolWindow) return;
+    const endDate=parseSingleOrRangeEnd(d.aolWindow);
+    const diff=Math.ceil((endDate-now)/86400000);
+    const done=aolDoneCount(i);
+    let urgency;
+    if(done===4) urgency=`<span class="badge badge-ok">Completo</span>`;
+    else if(diff<0) urgency=`<span class="badge badge-warn">Janela encerrada</span>`;
+    else if(diff<=3) urgency=`<span class="badge badge-warn">${diff}d restantes</span>`;
+    else urgency=`<span class="badge" style="background:rgba(232,185,35,.18);color:#E8B923">${diff}d restantes</span>`;
+    html+=`<div class="card" style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><h3 style="margin:0">${d.n}</h3>${urgency}</div>${renderAolBlock(i,'aols')}</div>`;
+  });
+  el.innerHTML = html || '<p class="small">Nenhuma disciplina com AOLs cadastradas.</p>';
+  D.forEach((d,i)=>{ if(d.aolWindow) updateAolSummary(i,'aols'); });
+}
+
+function renderAvaliacoesView(){
+  const el=document.getElementById('avalList');
+  if(!el) return;
+  const now=new Date(); now.setHours(0,0,0,0);
+  let items=[];
+  D.forEach((d,i)=>{
+    d.av.forEach(([label,dateStr])=>{
+      items.push({discName:d.n, label, dateStr, dt:parseSingleOrRangeEnd(dateStr)});
+    });
+  });
+  items.sort((a,b)=>a.dt-b.dt);
+  el.innerHTML = items.map(it=>{
+    const diff=Math.ceil((it.dt-now)/86400000);
+    let badge;
+    if(diff<0) badge=`<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">passou</span>`;
+    else if(diff===0) badge=`<span class="badge badge-warn">HOJE</span>`;
+    else if(diff<=3) badge=`<span class="badge badge-warn">${diff} dia${diff>1?'s':''}</span>`;
+    else if(diff<=10) badge=`<span class="badge" style="background:rgba(232,185,35,.18);color:#E8B923">${diff} dias</span>`;
+    else badge=`<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">${diff} dias</span>`;
+    return `<div class="lesson" style="display:flex;justify-content:space-between;align-items:center;gap:10px;${diff<0?'opacity:.45':''}">
+      <div><b>${it.discName}</b><br><span class="small">${it.label} — ${it.dateStr}</span></div>${badge}
+    </div>`;
+  }).join('');
+}
+renderAolsView();
+renderAvaliacoesView();
+
+D.forEach((d,i)=>{let c=document.createElement("div");c.className="card tile";c.innerHTML=`<h3 style="margin-top:0">${d.n}</h3><div class="progress"><div class="bar" style="width:${d.p}"></div></div><p class="small">${d.prof}</p>`;c.onclick=()=>openDisc(i);grid.appendChild(c);});
+
+function openDisc(i, tab){
+  goto('disc');
+  grid.classList.add("hidden");detail.classList.remove("hidden");
+  let d=D[i];
+  detail.innerHTML=`<button class="back" onclick="back()">← Voltar</button><div class="hero"><h2 style="margin-top:0">${d.n}</h2><p class="small">${d.prof}</p><div class="progress"><div class="bar" style="width:${d.p}"></div></div></div><div class="grid" style="margin:18px 0"><div class="card tile" onclick="show('web',${i})"><h3 style="margin-top:0">📺 Web Aulas</h3></div><div class="card tile" onclick="show('aol',${i})"><h3 style="margin-top:0">🟡 AOLs</h3></div><div class="card tile" onclick="show('av',${i})"><h3 style="margin-top:0">🎓 Avaliações</h3></div><div class="card tile" onclick="show('mat',${i})"><h3 style="margin-top:0">📚 Material</h3></div></div><div id="sub"></div>`;
+  show(tab || 'web', i);
+}
+function show(t,i){
+  window.__lastShow = {t, i};
+  let d=D[i],s=sub;
+  if(t=='web'){s.innerHTML='<h3>📺 Agenda de Web Aulas</h3>'+(d.web.length?d.web.map((w,n)=>`<div class="lesson"><h3 style="margin-top:0">${n==0?'⭐ Próxima Web Aula':'📺 Web Aula '+(n+1)}</h3><p><b>Aula Virtual – ${w[0]} – ${w[1]}h (Horário de Brasília)</b></p><p class="small">👨‍🏫 Prof. ${d.prof}</p></div>`).join(''):'<div class="lesson">Sem web aulas ao vivo cadastradas para esta disciplina.</div>');}
+  if(t=='aol'){s.innerHTML='<h3>🟡 AOLs (marque as já enviadas)</h3>'+renderAolBlock(i,'detail'); updateAolSummary(i,'detail');}
+  if(t=='av'){s.innerHTML='<h3>🎓 Avaliações</h3><div class="timeline">'+d.av.map(a=>`<div class="t"><b>${a[0]}</b><br>${a[1]}</div>`).join('')+'</div>';}
+  if(t=='mat'){s.innerHTML='<h3>📚 Material</h3>'+d.mat.map(m=>`<div class="lesson">📘 ${m}</div>`).join('')
+    +'<h3 style="margin-top:20px">📎 Seus arquivos</h3>'
+    +`<label class="btn" style="display:inline-block;margin-bottom:12px;cursor:pointer">+ Anexar arquivo<input type="file" style="display:none" onchange="attachMatFile(${i}, this)"></label>`
+    +`<div id="matFiles">${renderMatFiles(i)}</div>`;}
+}
+function back(){detail.classList.add("hidden");grid.classList.remove("hidden");}
+
+/* ---- Material: anexar arquivos por disciplina ---- */
+function matKey(i){ return `materiais_${i}`; }
+function getMatFiles(i){ try{ return JSON.parse(localStorage.getItem(matKey(i))||'[]'); }catch(e){ return []; } }
+function saveMatFiles(i, files){
+  try{ localStorage.setItem(matKey(i), JSON.stringify(files)); }
+  catch(e){ alert('Esse arquivo é grande demais para salvar no navegador. Tente um arquivo menor (o armazenamento local tem limite de alguns MB).'); }
+}
+function renderMatFiles(i){
+  const files=getMatFiles(i);
+  if(!files.length) return '<p class="small">Nenhum arquivo anexado ainda.</p>';
+  return files.map((f,idx)=>`<div class="lesson" style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+    <a href="${f.data}" download="${f.name}" style="color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">📎 ${f.name}</a>
+    <button class="back" style="padding:5px 12px;margin:0;flex-shrink:0" onclick="removeMatFile(${i},${idx})">Remover</button>
+  </div>`).join('');
+}
+function attachMatFile(i, input){
+  const file=input.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    const files=getMatFiles(i);
+    files.push({name:file.name, data:reader.result});
+    saveMatFiles(i, files);
+    show('mat', i);
+  };
+  reader.readAsDataURL(file);
+}
+function removeMatFile(i, idx){
+  const files=getMatFiles(i);
+  files.splice(idx,1);
+  saveMatFiles(i, files);
+  show('mat', i);
+}
+
+/* ---- Foto de perfil ---- */
+function applyAvatar(){
+  const data=localStorage.getItem('avatarPhoto');
+  const el=document.getElementById('avatarBtn');
+  if(data){ el.style.backgroundImage=`url(${data})`; el.style.backgroundSize='cover'; el.style.backgroundPosition='center'; el.textContent=''; }
+}
+document.getElementById('avatarInput').addEventListener('change', function(e){
+  const file=e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{ localStorage.setItem('avatarPhoto', reader.result); applyAvatar(); };
+  reader.readAsDataURL(file);
+});
+applyAvatar();
+
+/* ---- Foco do dia: próximo prazo + dica de estudo ---- */
+const DEADLINES=[
+  {label:"Geometria — Web aula ao vivo",date:"2026-08-18"},
+  {label:"Ensino Digital — Web aula ao vivo",date:"2026-08-19"},
+  {label:"Extensão — abertura da janela de envio da AV1",date:"2026-08-24"},
+  {label:"Geometria — Web aula ao vivo",date:"2026-08-25"},
+  {label:"Geometria — fim do agendamento da AV2",date:"2026-08-31"},
+  {label:"Química / IA — Web aulas ao vivo",date:"2026-08-29"},
+  {label:"Ensino Digital — fim do agendamento da AV2",date:"2026-09-04"},
+  {label:"Geometria — Web aula ao vivo",date:"2026-09-08"},
+  {label:"Ensino Digital / Geometria / Química — prazo final da AV1",date:"2026-09-21"},
+  {label:"Geometria — gabarito da AV1",date:"2026-09-23"},
+  {label:"Extensão — fim da janela de envio da AV1",date:"2026-09-27"},
+  {label:"Química — fim da realização da AV2",date:"2026-10-02"},
+  {label:"Geometria — gabarito da AV2",date:"2026-10-15"},
+  {label:"Geometria / Química — fim da AF",date:"2026-10-31"},
+  {label:"Geometria / Química — gabarito da AF",date:"2026-11-04"},
+  {label:"Extensão — fim da janela de envio da AV2",date:"2026-11-22"},
+  {label:"IA — prazo final da AV1",date:"2026-12-07"},
+];
+function renderNextDeadline(){
+  const now=new Date(); now.setHours(0,0,0,0);
+  const upcoming=DEADLINES.map(d=>({...d,diff:Math.ceil((new Date(d.date+'T00:00:00')-now)/86400000)})).filter(d=>d.diff>=0).sort((a,b)=>a.diff-b.diff);
+  const el=document.getElementById('nextDeadline');
+  if(!upcoming.length){ el.innerHTML='<p class="small">Nenhum prazo futuro cadastrado.</p>'; return; }
+  const n=upcoming[0];
+  const when = n.diff===0 ? 'É hoje!' : n.diff===1 ? 'Falta 1 dia' : `Faltam ${n.diff} dias`;
+  el.innerHTML=`<p style="margin:0"><b>${n.label}</b></p><p class="small" style="margin:4px 0 0">${when}</p>`;
+}
+renderNextDeadline();
+
+const TIPS=[
+  "Revise o que estudou hoje em 24h, depois em 7 dias — repetição espaçada fixa muito mais que reler tudo de uma vez.",
+  "20–25 minutos de foco total + 5 de pausa (Pomodoro) rendem mais que 2h contínuas cansado.",
+  "Antes de decorar fórmulas de Geometria, entenda de onde elas vêm — fica mais fácil lembrar na prova.",
+  "Fazer exercícios é mais eficiente pra aprender do que só reler o material.",
+  "Anote suas dúvidas assim que surgirem — evita esquecer de perguntar ao professor depois.",
+  "Durma bem antes de uma prova. A memória se consolida durante o sono, não durante a virada.",
+  "Divida um conteúdo grande em blocos pequenos — é mais fácil manter o ritmo do que tentar vencer tudo de uma vez."
+];
+function renderTip(){
+  const dayIndex = Math.floor(Date.now()/86400000) % TIPS.length;
+  document.getElementById('studyTip').innerHTML = `💡 <b>Dica do dia:</b> ${TIPS[dayIndex]}`;
+}
+renderTip();
+
+/* ---- Próxima Web Aula: dinâmica, calculada a partir de D ---- */
+function parseBrDateTime(dateStr, timeStr){
+  // dateStr no formato "18/08/2026" (ignora sufixos tipo "(gravação)")
+  const clean = dateStr.trim().split(' ')[0];
+  const [d,m,y] = clean.split('/').map(Number);
+  const [hh,mm] = timeStr.split(':').map(Number);
+  return new Date(y, m-1, d, hh, mm||0);
+}
+function renderNextWebAula(){
+  const now = new Date();
+  let candidates = [];
+  D.forEach((disc, i) => {
+    disc.web.forEach(w => {
+      if(w[0].toLowerCase().includes('gravação')) return; // só conta aulas ao vivo
+      const dt = parseBrDateTime(w[0], w[1]);
+      candidates.push({dt, dateLabel:w[0], time:w[1], disc, idx:i});
+    });
+  });
+  candidates.sort((a,b) => a.dt - b.dt);
+  const upcoming = candidates.find(c => c.dt >= now);
+
+  const elText = document.getElementById('nextWebAulaText');
+  const elProf = document.getElementById('nextWebAulaProf');
+  const btn = document.getElementById('nextWebAulaBtn');
+
+  if(!upcoming){
+    elText.innerHTML = '<b>Nenhuma web aula futura cadastrada no momento.</b>';
+    elProf.textContent = '';
+    btn.style.display = 'none';
+    return;
+  }
+  elText.innerHTML = `<b>Aula Virtual – ${upcoming.dateLabel} – ${upcoming.time}h (Horário de Brasília)</b>`;
+  elProf.textContent = `👨‍🏫 Prof. ${upcoming.disc.prof} · ${upcoming.disc.n}`;
+  btn.onclick = () => { goto('disc'); openDisc(upcoming.idx); };
+}
+renderNextWebAula();
+
+document.querySelectorAll("[data-id]").forEach(c=>{let k='studyos_'+c.dataset.id;c.checked=localStorage.getItem(k)=='1';c.closest('.aol-item')?.classList.toggle('checked', c.checked);c.onchange=()=>{localStorage.setItem(k,c.checked?'1':'0');c.closest('.aol-item')?.classList.toggle('checked', c.checked);};});
+// ---- StudyOS 6.0: instalação/offline ----
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+</script></body></html>
