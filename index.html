@@ -72,9 +72,9 @@ button.btn:active{transform:scale(.97)}
 
 /* ---- Bottom nav (app style) ---- */
 .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(10,24,44,.92);backdrop-filter:blur(16px);border-top:1px solid var(--line);
-  display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));}
-.navbtn{background:none;border:none;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 7px;border-radius:14px;cursor:pointer;transition:.18s ease;font-size:9px;flex:1}
-.navbtn .ic{font-size:18px;line-height:1}
+  display:flex;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 4px calc(8px + env(safe-area-inset-bottom));}
+.navbtn{background:none;border:none;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;border-radius:14px;cursor:pointer;transition:.18s ease;font-size:8px;flex:0 0 auto;min-width:52px}
+.navbtn .ic{font-size:17px;line-height:1}
 .navbtn.active{color:var(--gold);background:rgba(212,175,55,.1);transform:translateY(-3px)}
 .navbtn:active{transform:scale(.92)}
 </style></head><body>
@@ -101,6 +101,9 @@ button.btn:active{transform:scale(.97)}
   <div class="lesson"><h3 style="margin-top:0">⭐ Próxima Web Aula</h3><p id="nextWebAulaText"><b>Carregando…</b></p><p class="small" id="nextWebAulaProf"></p><button class="btn" id="nextWebAulaBtn">▶ Continuar estudando</button></div></div>
 
   <div class="card" style="margin-top:16px"><h3 style="margin-top:0">🟡 Resumo de AOLs pendentes</h3><div id="aolHomeSummary"></div></div>
+  <div class="card" style="margin-top:16px"><h3 style="margin-top:0">1️⃣ Resumo de AV1</h3><div id="av1HomeSummary"></div></div>
+  <div class="card" style="margin-top:16px"><h3 style="margin-top:0">2️⃣ Resumo de AV2</h3><div id="av2HomeSummary"></div></div>
+  <div class="card" style="margin-top:16px"><h3 style="margin-top:0">🎓 Resumo de AF</h3><div id="afHomeSummary"></div></div>
 </section>
 
 <section id="sem" class="view"><div class="card"><h2 style="margin-top:0">📅 Linha do Tempo (auditada)</h2><table><tr><th>Data</th><th>Disciplina</th><th>Evento</th></tr>
@@ -152,9 +155,15 @@ button.btn:active{transform:scale(.97)}
 
 <section id="disc" class="view"><div id="grid" class="grid"></div><div id="detail" class="hidden"></div></section>
 
+<section id="semana" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🗓️ Plano de Estudos por Semana</h2><p class="small" style="margin:0">Tudo que não tem data fixa (unidades, ebooks, módulos) encaixado nos seus horários livres — 20h às 21h30, o tempo que você me disse que consegue estudar por dia. Cada item é clicável pra marcar como concluído. O que tem data fixa (web aulas, AV1/AV2/AF) continua nas abas Semestre e Avaliações.</p></div><div id="weeklyPlanList"></div></section>
+
 <section id="aols" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🟡 AOLs — visão geral</h2><p class="small" style="margin:0">Acompanhe aqui, disciplina por disciplina, quais das 4 AOLs de cada AV1 você já enviou. Marcar aqui atualiza também dentro da disciplina (é o mesmo dado salvo).</p></div><div id="aolsListContainer"></div></section>
 
-<section id="avaliacoes" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🎓 AV1 / AV2 / AF — visão geral</h2><p class="small" style="margin:0">Todas as avaliações de todas as disciplinas, em ordem de proximidade — o que está mais perto de vencer aparece primeiro.</p></div><div id="avalList"></div></section>
+<section id="av1" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">1️⃣ AV1 — visão geral</h2><p class="small" style="margin:0">Janelas de envio da AV1 (AOLs) de todas as disciplinas, em ordem de proximidade.</p></div><div id="av1List"></div></section>
+
+<section id="av2" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">2️⃣ AV2 — visão geral</h2><p class="small" style="margin:0">Agendamentos, realizações, 2ª chamada e gabaritos de AV2 de todas as disciplinas, em ordem de proximidade.</p></div><div id="av2List"></div></section>
+
+<section id="avaliacoes" class="view"><div class="card" style="margin-bottom:14px"><h2 style="margin-top:0">🎓 AF — visão geral</h2><p class="small" style="margin:0">Avaliações Finais de todas as disciplinas, em ordem de proximidade.</p></div><div id="avalList"></div></section>
 
 <section id="check" class="view"><div class="card"><h2 style="margin-top:0">Checklist</h2><label class="aol-item" style="display:flex"><input type="checkbox" data-id="1"><span>Web Aulas em dia</span></label><br><label class="aol-item" style="display:flex;margin-top:8px"><input type="checkbox" data-id="2"><span>AVA atualizado</span></label><br><label class="aol-item" style="display:flex;margin-top:8px"><input type="checkbox" data-id="3"><span>Revisão concluída</span></label></div></section>
 
@@ -164,8 +173,11 @@ button.btn:active{transform:scale(.97)}
   <button class="navbtn active" data-view="home"><span class="ic">🏠</span>Hoje</button>
   <button class="navbtn" data-view="sem"><span class="ic">📅</span>Semestre</button>
   <button class="navbtn" data-view="disc"><span class="ic">📚</span>Disciplinas</button>
+  <button class="navbtn" data-view="semana"><span class="ic">🗓️</span>Semana</button>
   <button class="navbtn" data-view="aols"><span class="ic">🟡</span>AOLs</button>
-  <button class="navbtn" data-view="avaliacoes"><span class="ic">🎓</span>Avaliações</button>
+  <button class="navbtn" data-view="av1"><span class="ic">1️⃣</span>AV1</button>
+  <button class="navbtn" data-view="av2"><span class="ic">2️⃣</span>AV2</button>
+  <button class="navbtn" data-view="avaliacoes"><span class="ic">🎓</span>AF</button>
   <button class="navbtn" data-view="check"><span class="ic">✅</span>Checklist</button>
 </nav>
 
@@ -289,32 +301,96 @@ function renderAolsView(){
   D.forEach((d,i)=>{ if(d.aolWindow) updateAolSummary(i,'aols'); });
 }
 
-function renderAvaliacoesView(){
-  const el=document.getElementById('avalList');
-  if(!el) return;
-  const now=new Date(); now.setHours(0,0,0,0);
+function categorizeAvLabel(label){
+  if(label.includes('AV1')) return 'AV1';
+  if(label.includes('AV2') || label.includes('2ª chamada') || label.includes('2a chamada')) return 'AV2';
+  if(label.includes('AF')) return 'AF';
+  return 'AV2';
+}
+function buildCategorizedAval(cat){
   let items=[];
   D.forEach((d,i)=>{
+    if(cat==='AV1' && d.aolWindow){
+      items.push({discIdx:i, discName:d.n, label:'Janela de envio da AV1 (AOLs 01–04)', dateStr:d.aolWindow, dt:parseSingleOrRangeEnd(d.aolWindow)});
+    }
     d.av.forEach(([label,dateStr])=>{
-      items.push({discName:d.n, label, dateStr, dt:parseSingleOrRangeEnd(dateStr)});
+      if(categorizeAvLabel(label)===cat){
+        items.push({discIdx:i, discName:d.n, label, dateStr, dt:parseSingleOrRangeEnd(dateStr)});
+      }
     });
   });
   items.sort((a,b)=>a.dt-b.dt);
+  return items;
+}
+function avItemKey(cat, discIdx, label, dateStr){
+  const safe=(label+dateStr).replace(/[^a-zA-Z0-9]/g,'');
+  return `avdone_${cat}_${discIdx}_${safe}`;
+}
+function toggleAvItem(cat, discIdx, label, dateStr){
+  const key=avItemKey(cat, discIdx, label, dateStr);
+  const cur=localStorage.getItem(key)=='1';
+  localStorage.setItem(key, cur? '0':'1');
+  const containerId = cat==='AV1' ? 'av1List' : cat==='AV2' ? 'av2List' : 'avalList';
+  renderCategorizedAvalView(containerId, cat);
+  renderAvHomeSummary(cat);
+}
+function renderCategorizedAvalView(containerId, cat){
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  const now=new Date(); now.setHours(0,0,0,0);
+  const items=buildCategorizedAval(cat);
   el.innerHTML = items.map(it=>{
     const diff=Math.ceil((it.dt-now)/86400000);
+    const key=avItemKey(cat, it.discIdx, it.label, it.dateStr);
+    const checked=localStorage.getItem(key)=='1';
     let badge;
-    if(diff<0) badge=`<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">passou</span>`;
+    if(checked) badge=`<span class="badge badge-ok">Feito ✓</span>`;
+    else if(diff<0) badge=`<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">passou</span>`;
     else if(diff===0) badge=`<span class="badge badge-warn">HOJE</span>`;
     else if(diff<=3) badge=`<span class="badge badge-warn">${diff} dia${diff>1?'s':''}</span>`;
     else if(diff<=10) badge=`<span class="badge" style="background:rgba(232,185,35,.18);color:#E8B923">${diff} dias</span>`;
     else badge=`<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">${diff} dias</span>`;
-    return `<div class="lesson" style="display:flex;justify-content:space-between;align-items:center;gap:10px;${diff<0?'opacity:.45':''}">
-      <div><b>${it.discName}</b><br><span class="small">${it.label} — ${it.dateStr}</span></div>${badge}
+    return `<label class="aol-item ${checked?'checked':''}" style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;${(!checked&&diff<0)?'opacity:.6':''}">
+      <span style="display:flex;align-items:flex-start;gap:8px">
+        <input type="checkbox" ${checked?'checked':''} onchange="toggleAvItem('${cat}',${it.discIdx},'${it.label.replace(/'/g,"\\'")}','${it.dateStr.replace(/'/g,"\\'")}')" style="margin-top:3px">
+        <span><b>${it.discName}</b><br><span class="small">${it.label} — ${it.dateStr}</span></span>
+      </span>
+      ${badge}
+    </label>`;
+  }).join('') || '<p class="small">Nada cadastrado nessa categoria.</p>';
+}
+function renderAvHomeSummary(cat){
+  const containerId = cat==='AV1' ? 'av1HomeSummary' : cat==='AV2' ? 'av2HomeSummary' : 'afHomeSummary';
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  const items=buildCategorizedAval(cat);
+  // agrupa por disciplina
+  let byDisc={};
+  items.forEach(it=>{
+    if(!byDisc[it.discIdx]) byDisc[it.discIdx]={name:it.discName, total:0, done:0};
+    byDisc[it.discIdx].total++;
+    const key=avItemKey(cat, it.discIdx, it.label, it.dateStr);
+    if(localStorage.getItem(key)=='1') byDisc[it.discIdx].done++;
+  });
+  const targetView = cat==='AV1' ? 'av1' : cat==='AV2' ? 'av2' : 'avaliacoes';
+  const html=Object.keys(byDisc).map(i=>{
+    const info=byDisc[i];
+    const badge = info.done===info.total
+      ? `<span class="badge badge-ok">${info.done}/${info.total} ✓</span>`
+      : `<span class="badge badge-warn">${info.done}/${info.total} — faltam ${info.total-info.done}</span>`;
+    return `<div class="lesson tile" style="margin:8px 0;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="goto('${targetView}')">
+      <span>${info.name}</span>${badge}
     </div>`;
   }).join('');
+  el.innerHTML = html || '<p class="small">Nada cadastrado nessa categoria.</p>';
 }
 renderAolsView();
-renderAvaliacoesView();
+renderCategorizedAvalView('av1List','AV1');
+renderCategorizedAvalView('av2List','AV2');
+renderCategorizedAvalView('avalList','AF');
+renderAvHomeSummary('AV1');
+renderAvHomeSummary('AV2');
+renderAvHomeSummary('AF');
 
 D.forEach((d,i)=>{let c=document.createElement("div");c.className="card tile";c.innerHTML=`<h3 style="margin-top:0">${d.n}</h3><div class="progress"><div class="bar" style="width:${d.p}"></div></div><p class="small">${d.prof}</p>`;c.onclick=()=>openDisc(i);grid.appendChild(c);});
 
@@ -434,6 +510,146 @@ function renderTip(){
 renderTip();
 
 /* ---- Próxima Web Aula: dinâmica, calculada a partir de D ---- */
+/* ---- Plano de Estudos por Semana (conteúdo sem data fixa, ancorado no calendário real, separado por disciplina) ---- */
+const WEEKLY_PLAN = [
+  {start:"2026-08-17", items:[
+    {d:0, content:"Unidade 2: Estudo da Reta e Introdução ao Estudo do Plano"},
+    {d:3, content:"Revisar Unidade 1: Concepções, Conceitos, Características e Legislação em EaD"},
+    {d:4, content:"Revisar módulos: O que é Extensão Universitária + Como Realizar Extensão Universitária"},
+  ]},
+  {start:"2026-08-24", items:[
+    {d:0, content:"Unidade 3: Interseções e Distâncias entre Pontos, Retas e Planos"},
+    {d:2, content:"Revisar Unidade 1: Estrutura Eletrônica"},
+    {d:4, content:"Revisar módulos: Campanhas de Conscientização + Direitos Humanos, e o Ebook"},
+  ]},
+  {start:"2026-08-31", items:[
+    {d:0, content:"Unidade 4: Estudo das Cônicas"},
+    {d:3, content:"Revisar Unidade 2: Seu roteiro de sucesso na EaD (metodologia e experiência Ser Educacional)"},
+    {d:2, content:"Revisar Unidade 2: Reações Químicas em Soluções Aquosas"},
+  ]},
+  {start:"2026-09-07", items:[
+    {d:0, content:"Ebook + revisão geral — consolidar as 4 unidades antes de enviar as AOLs 01–04"},
+    {d:2, content:"Revisar Unidade 3: Cálculos em Química e Cálculos Estequiométricos"},
+  ]},
+  {start:"2026-09-14", items:[
+    {d:0, content:"Revisão final antes da AV1 (vence 21/09)"},
+    {d:3, content:"Revisar Unidade 3: As Novas Tecnologias da Informação e Comunicação (NTICs)"},
+    {d:2, content:"Revisar Unidade 4: Conceitos de Química Orgânica"},
+  ]},
+  {start:"2026-09-21", items:[
+    {d:4, content:"Finalizar e enviar o Projeto de Extensão (AV1) — janela fecha 27/09"},
+    {d:2, content:"Revisar o Ebook — reta final antes da AV2"},
+  ]},
+  {start:"2026-09-28", items:[
+    {d:2, content:"Revisão geral das 4 unidades — AV2 é de 21/09 a 02/10"},
+    {d:3, content:"Revisar Unidade 4: Ecossistema, carreira e a estratégia do estudante Cointeligente na Era Digital"},
+  ]},
+  {start:"2026-10-05", items:[
+    {d:3, content:"Revisar o Ebook — reta final antes da AF (21–23/10)"},
+  ]},
+  {start:"2026-10-12", items:[
+    {d:0, content:"Revisão geral das 4 unidades — AF em 27–31/10"},
+    {d:2, content:"Revisão geral das 4 unidades — AF em 27–31/10"},
+  ]},
+  {start:"2026-10-19", items:[
+    {d:4, content:"Montar o Relatório de Intervenção (AV2) — janela até 22/11"},
+    {d:3, content:"Semana da Avaliação Final (21–23/10)"},
+  ]},
+  {start:"2026-10-26", items:[
+    {d:0, content:"Semana de prova — Avaliação Final"},
+    {d:2, content:"Semana de prova — Avaliação Final"},
+  ]},
+  {start:"2026-11-02", items:[
+    {d:1, content:"Revisar Unidade 1: Conceitos de Inteligência Artificial + Unidade 2: Conceitos de Aprendizado de Máquina"},
+  ]},
+  {start:"2026-11-16", items:[
+    {d:1, content:"Revisar Unidade 3: Ética, Viés e Privacidade no Uso da IA + Unidade 4"},
+    {d:4, content:"Reta final — Relatório de Intervenção (AV2) vence 22/11"},
+  ]},
+  {start:"2026-11-30", items:[
+    {d:1, content:"Revisar os E-books — reta final antes do prazo da AV1 (07/12)"},
+  ]},
+];
+function parseISODate(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }
+function studyItemKey(weekStart, discIdx, itemIdx){ return `studyitem_${weekStart}_${discIdx}_${itemIdx}`; }
+function toggleStudyItem(weekStart, discIdx, itemIdx){
+  const key = studyItemKey(weekStart, discIdx, itemIdx);
+  const cur = localStorage.getItem(key)=='1';
+  localStorage.setItem(key, cur? '0':'1');
+  renderWeeklyPlan();
+}
+// Ordem de distribuição dos dias dentro da semana (Seg, Qua, Sex primeiro — espaçados; Ter/Qui/Sáb/Dom como reforço se sobrar item)
+const WEEKDAY_ROTATION = [1,3,5,2,4,6,0];
+const WEEKDAY_NAMES = {0:"Domingo",1:"Segunda",2:"Terça",3:"Quarta",4:"Quinta",5:"Sexta",6:"Sábado"};
+
+function renderWeeklyPlan(){
+  const el = document.getElementById('weeklyPlanList');
+  if(!el) return;
+  const now = new Date(); now.setHours(0,0,0,0);
+
+  const weeks = WEEKLY_PLAN.map((w)=>{
+    const start = parseISODate(w.start);
+    const end = new Date(start); end.setDate(start.getDate()+6);
+    return {...w, start, end};
+  });
+
+  el.innerHTML = weeks.map((w)=>{
+    const isCurrent = now>=w.start && now<=w.end;
+    const isPast = now>w.end;
+    const optsDate = {day:'2-digit', month:'2-digit'};
+    const rangeLabel = `${w.start.toLocaleDateString('pt-BR',optsDate)} – ${w.end.toLocaleDateString('pt-BR',optsDate)}`;
+    const weekEndOfDay = new Date(w.end.getFullYear(),w.end.getMonth(),w.end.getDate(),23,59);
+
+    // monta um mapa disciplina -> {contents:[], web:[]}
+    let byDisc = {};
+    w.items.forEach((it,itemIdx)=>{
+      if(!byDisc[it.d]) byDisc[it.d]={contents:[], web:[]};
+      // dia/horário atribuído: distribui pela ordem de rotação (Seg, Qua, Sex, Ter, Qui, Sáb, Dom)
+      const dow = WEEKDAY_ROTATION[itemIdx % 7];
+      const dowFromMonday = dow===0 ? 6 : dow-1;
+      const itemDate = new Date(w.start); itemDate.setDate(w.start.getDate()+dowFromMonday);
+      byDisc[it.d].contents.push({text:it.content, day:WEEKDAY_NAMES[dow], date:itemDate, itemIdx});
+    });
+    D.forEach((d,i)=>{
+      d.web.forEach(ww=>{
+        if(ww[0].toLowerCase().includes('gravação')) return;
+        const dt = parseBrDateTime(ww[0], ww[1]);
+        if(dt>=w.start && dt<=weekEndOfDay){
+          if(!byDisc[i]) byDisc[i]={contents:[], web:[]};
+          byDisc[i].web.push(`${ww[0]} às ${ww[1]}h`);
+        }
+      });
+    });
+
+    const discBlocks = Object.keys(byDisc).map(i=>{
+      const info = byDisc[i];
+      const d = D[i];
+      const contentHtml = info.contents.map(c=>{
+        const key = studyItemKey(w.start.toISOString().slice(0,10), i, c.itemIdx);
+        const checked = localStorage.getItem(key)=='1';
+        const dateLabel = c.date.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+        return `<label class="aol-item ${checked?'checked':''}" style="display:flex;align-items:flex-start;margin-top:6px;padding:10px 12px">
+          <input type="checkbox" ${checked?'checked':''} onchange="toggleStudyItem('${w.start.toISOString().slice(0,10)}',${i},${c.itemIdx})" style="margin-top:3px">
+          <span><b>${c.day}, ${dateLabel} · 20h–21h30</b><br>${c.text}</span>
+        </label>`;
+      }).join('');
+      const webHtml = info.web.length ? `<p class="small" style="margin:8px 0 0">📺 ${info.web.join(' · ')}</p>` : '';
+      return `<div class="lesson" style="margin-top:8px">
+        <b>${d.n}</b>
+        ${contentHtml}
+        ${webHtml}
+      </div>`;
+    }).join('');
+
+    return `<div class="card" style="margin-bottom:12px;${isCurrent?'border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)':''}${isPast?';opacity:.45':''}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <span class="small">${rangeLabel}</span>${isCurrent?'<span class="badge badge-ok">Semana atual</span>':(isPast?'<span class="badge" style="background:rgba(255,255,255,.08);color:var(--muted)">passou</span>':'')}
+      </div>
+      ${discBlocks}
+    </div>`;
+  }).join('');
+}
+
 function parseBrDateTime(dateStr, timeStr){
   // dateStr no formato "18/08/2026" (ignora sufixos tipo "(gravação)")
   const clean = dateStr.trim().split(' ')[0];
@@ -469,6 +685,7 @@ function renderNextWebAula(){
   btn.onclick = () => { goto('disc'); openDisc(upcoming.idx); };
 }
 renderNextWebAula();
+renderWeeklyPlan();
 
 document.querySelectorAll("[data-id]").forEach(c=>{let k='studyos_'+c.dataset.id;c.checked=localStorage.getItem(k)=='1';c.closest('.aol-item')?.classList.toggle('checked', c.checked);c.onchange=()=>{localStorage.setItem(k,c.checked?'1':'0');c.closest('.aol-item')?.classList.toggle('checked', c.checked);};});
 // ---- StudyOS 6.0: instalação/offline ----
