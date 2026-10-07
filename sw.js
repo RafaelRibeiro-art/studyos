@@ -1,4 +1,4 @@
-const CACHE = 'studyos-2026-08-20-v2';
+const CACHE = 'studyos-2.2-graphite-titanium';
 const CORE = ['./','./index.html','./manifest.json'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
